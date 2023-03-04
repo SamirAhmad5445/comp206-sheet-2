@@ -61,6 +61,7 @@
           <div class="array-output"></div>
         </div>
       </section>
+
       <section class="question question-2">
         <h2 class="question-title">question <u>7</u> :</h2>
         <div class="phone-section">
@@ -73,17 +74,42 @@
           />
 
           <button
-            onclick="formatePhoneNumber('+2')"
+            onclick="formatPhoneNumber('+2')"
             class="btn"
             data-btn-type="ghost"
           >
-            formate
+            format
           </button>
-          <input type="text" class="number-input phone-output" readonly />
+          <input
+            type="text"
+            placeholder="Click Format Button"
+            class="number-input phone-output"
+            readonly
+          />
           <button onclick="clearPhoneNumber()" class="btn">clear</button>
         </div>
       </section>
-      <section class="question question-3"></section>
+
+      <section class="question question-3">
+        <h2>question <u>8</u> :</h2>
+
+        <div class="input-section">
+          <input
+            type="number"
+            class="number-input"
+            placeholder="Enter the dimension"
+            pattern="[0-9]"
+          />
+          <button onclick="drow('table')" class="btn" data-btn-type="ghost">
+            table
+          </button>
+          <button onclick="drow('matrex')" class="btn" data-btn-type="accent">
+            matrix
+          </button>
+        </div>
+
+        <div class="drow-area"></div>
+      </section>
     </main>
   </body>
 </html>

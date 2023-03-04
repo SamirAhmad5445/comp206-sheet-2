@@ -127,6 +127,30 @@ h1 {
   gap: 1rem;
 }
 
+/* question 3 */
+.drow-area {
+  min-width: 100%;
+  min-height: 15rem;
+  padding: 1.5rem;
+  background-color: transparent;
+  color: var(--primary);
+  border: 0.125rem solid var(--primary);
+  border-radius: 1rem;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+
+.drow-area td {
+  min-width: 5rem;
+  min-height: 2rem;
+}
+
+.drow-area input {
+  display: inline-block;
+  max-width: 5rem;
+  max-height: 2rem;
+}
+
 /* btn component */
 .btn {
   --btn-background: var(--primary);
@@ -185,37 +209,37 @@ u > span {
   padding-inline-start: 0.125rem;
 }
 
-u:is(:hover, :focus, :focus-within) {
+u:is(:hover, :focus) {
   color: var(--electro);
 }
 
-u:is(:hover, :focus, :focus-within) > span {
+u:is(:hover, :focus) > span {
   /* mix-blend-mode: difference; */
   text-shadow: 0 0 0.25em var(--electro);
   animation: floating 3.25s ease-in-out infinite;
 }
 
-u:is(:hover, :focus, :focus-within) > span:nth-child(4n + 1) {
+u:is(:hover, :focus) > span:nth-child(4n + 1) {
   animation-delay: 0;
   transform: translate(0.25em, 0.5em) rotate(5deg) skew(-5deg) scale(1.05);
 }
 
-u:is(:hover, :focus, :focus-within) > span:nth-child(4n + 2) {
+u:is(:hover, :focus) > span:nth-child(4n + 2) {
   animation-delay: 250ms;
   transform: translate(-0.5em, -0.75em) rotate(-20deg) skew(15deg) scale(0.9);
 }
 
-u:is(:hover, :focus, :focus-within) > span:nth-child(4n + 3) {
+u:is(:hover, :focus) > span:nth-child(4n + 3) {
   animation-delay: 370ms;
   transform: translate(0.25em, -0.5em) rotate(-15deg) skew(-10deg) scale(0.95);
 }
 
-u:is(:hover, :focus, :focus-within) > span:nth-child(4n + 4) {
+u:is(:hover, :focus) > span:nth-child(4n + 4) {
   animation-delay: 150ms;
   transform: translate(-0.25em, 0.5em) rotate(10deg) skew(25deg) scale(1.1);
 }
 
-u:is(:hover, :focus, :focus-within)[data-underline="true"]::before {
+u:is(:hover, :focus)[data-underline="true"]::before {
   background-color: transparent;
 }
 

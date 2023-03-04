@@ -64,7 +64,7 @@ function secondBig() {
 function allPrimary() {
   let prime = [];
   outerLoop: for (let i = 0; i < numbers.length; i++) {
-    for (let j = 2; j < Math.abs(Math.sqrt(numbers[i])); j++) {
+    for (let j = 2; j < Math.sqrt(numbers[i] ** 2); j++) {
       if (numbers[i] % j === 0) continue outerLoop;
     }
     prime.push(numbers[i]);
@@ -92,12 +92,49 @@ function nElements() {
 const phoneInput = document.querySelector(".phone-number");
 const phoneOutput = document.querySelector(".phone-output");
 
-function formatePhoneNumber(prefix) {
+function formatPhoneNumber(prefix) {
   let p = phoneInput.value;
-  let arr = [p.slice(0, 1), p.slice(1, 4), p.slice(4, 7), p.slice(7)];
-  phoneOutput.value = prefix + arr.join("-");
+  if (p) {
+    let arr = [p.slice(0, 1), p.slice(1, 4), p.slice(4, 7), p.slice(7)];
+    phoneOutput.value = prefix + arr.join("-");
+  }
 }
 
 function clearPhoneNumber() {
   phoneOutput.value = "";
+}
+
+// q8: drow a table or a matrix from input type number
+const drowArea = document.querySelector(".drow-area");
+
+function drow(option) {
+  const dim = document.querySelector(".question-3 input").valueAsNumber;
+  drowArea.innerHTML = "";
+  if (option === "table") {
+    const table = document.createElement("table");
+    table.setAttribute("border", "1");
+    for (let i = 0; i < dim; i++) {
+      const tr = document.createElement("tr");
+      for (let j = 0; j < dim; j++) {
+        const td = document.createElement("td");
+        td.innerHTML = "table";
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    }
+    drowArea.appendChild(table);
+  } else {
+    const form = document.createElement("form");
+    for (let i = 0; i < dim; i++) {
+      const div = document.createElement("div");
+      for (let j = 0; j < dim; j++) {
+        const input = document.createElement("input");
+        input.setAttribute("type", "number");
+        input.value = (i + 1) * (j + 1);
+        div.appendChild(input);
+      }
+      form.appendChild(div);
+    }
+    drowArea.appendChild(form);
+  }
 }
