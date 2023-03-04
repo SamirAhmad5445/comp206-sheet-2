@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <title>Comp 206 | Sheet 2</title>
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- main script -->
+    <script defer src="./script.js"></script>
+
+    <!-- Sheet answer  -->
+    <script defer src="./solution.js"></script>
+  </head>
+  <body>
+    <main class="container grid-layout">
+      <h1><u>Sheet 2</u></h1>
+      <section class="question question-1">
+        <h2 class="question-title">question <u>1-6</u> :</h2>
+
+        <div class="input-section">
+          <input
+            type="number"
+            class="number-input"
+            placeholder="Enter any number"
+            pattern="[0-9]"
+          />
+          <button onclick="insert()" class="btn" data-btn-type="electro">
+            insert
+          </button>
+          <button onclick="show()" class="btn" data-btn-type="accent">
+            show
+          </button>
+        </div>
+
+        <div class="functions-section">
+          <button onclick="firstNegative()" class="btn" data-btn-type="ghost">
+            first negative
+          </button>
+          <button onclick="lastNegative()" class="btn" data-btn-type="ghost">
+            last negative
+          </button>
+          <button onclick="secondBig()" class="btn" data-btn-type="ghost">
+            second biggest
+          </button>
+          <button onclick="allPrimary()" class="btn" data-btn-type="ghost">
+            all primary
+          </button>
+          <button onclick="nElements()" class="btn" data-btn-type="accent">
+            <span id="n" style="color: var(--electro)" contenteditable>n</span>
+            elements
+          </button>
+          <button onclick="clearOutput()" class="btn">clear output</button>
+        </div>
+
+        <div class="output-section">
+          <div class="array-output"></div>
+        </div>
+      </section>
+      <section class="question question-2">
+        <h2 class="question-title">question <u>7</u> :</h2>
+        <div class="phone-section">
+          <input
+            type="number"
+            class="number-input phone-number"
+            placeholder="Enter phone number"
+            maxlength="11"
+            minlength="11"
+          />
+
+          <button
+            onclick="formatePhoneNumber('+2')"
+            class="btn"
+            data-btn-type="ghost"
+          >
+            formate
+          </button>
+          <input type="text" class="number-input phone-output" readonly />
+          <button onclick="clearPhoneNumber()" class="btn">clear</button>
+        </div>
+      </section>
+      <section class="question question-3"></section>
+    </main>
+  </body>
+</html>
