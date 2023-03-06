@@ -1,7 +1,7 @@
 // sections 1
 const numberInput = document.querySelector(".question-1 .number-input");
 const arrayOutput = document.querySelector(".question-1 .array-output");
-let numbers = new Array();
+let numbers = new Array(12, -10, 25, 3, -4, 32);
 
 // q1: two functions to insert a number to an array and show the array
 function insert() {
@@ -47,13 +47,14 @@ function lastNegative() {
 
 // q4: function to display the second biggest number
 function secondBig() {
-  var first = numbers[0],
-    second = 0;
+  let first = numbers[0],
+    second = numbers[0];
+
   for (let i = 1; i < numbers.length; i++) {
-    if (first <= numbers[i]) {
+    if (first < numbers[i]) {
       second = first;
       first = numbers[i];
-    } else if (second <= numbers[i]) {
+    } else if (second < numbers[i]) {
       second = numbers[i];
     }
   }
@@ -79,13 +80,9 @@ function allPrimary() {
 function nElements() {
   if (!n.innerHTML) {
     n.innerHTML = "N";
+  } else {
+    arrayOutput.innerHTML = numbers.slice(0, n.innerHTML).join(" , ");
   }
-  let e = [],
-    l = +n.innerHTML || numbers.length;
-  for (let i = 0; i < l && i < numbers.length; i++) {
-    e.push(numbers[i]);
-  }
-  arrayOutput.innerHTML = e.join(" , ");
 }
 
 // q7: format a phone number
@@ -94,9 +91,11 @@ const phoneOutput = document.querySelector(".phone-output");
 
 function formatPhoneNumber(prefix) {
   let p = phoneInput.value;
-  if (p) {
+  if (p && phoneInput.value.length == 11) {
     let arr = [p.slice(0, 1), p.slice(1, 4), p.slice(4, 7), p.slice(7)];
     phoneOutput.value = prefix + arr.join("-");
+  } else {
+    clearPhoneNumber();
   }
 }
 
